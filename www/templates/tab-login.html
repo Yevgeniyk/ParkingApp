@@ -1,0 +1,23 @@
+<ion-view view-title="Login">
+  <ion-content class="padding">
+
+    <div class="list padding">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="loginData.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="loginData.password">
+      </label>
+      <ion-item>
+        <div class="button-bar">
+          <ion-spinner class="spinner svg" ng-show="logSpinner"></ion-spinner>
+          <button class="button  button-positive" ng-click="onLogin()" ng-disabled="isLogged">Log in</button>
+          <button class="button  button-positive" ng-click="onLogout()" ng-disabled="!isLogged">Log out</button>
+        </div>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>
+

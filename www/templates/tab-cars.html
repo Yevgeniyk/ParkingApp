@@ -1,0 +1,30 @@
+<ion-view view-title="Cars" >
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="iten-button">
+        <button class="button button-block button-positive" ng-click="getVehicle()">Refresh</button>
+      </ion-item>
+      <ion-item>
+        <div class="padding-left">
+          <h4>Vehicles:</h4>
+        </div>
+      </ion-item>
+      <ion-item class="item-text-wrap">
+      <div class="card rounded">
+        <div ng-repeat="vehicle in vehicles ">
+          <div class="item item-divider">
+            <span>{{vehicle.Name}}</span>
+          </div>
+          <div class="item">VIN:{{vehicle.VIN}}</div>
+          <div class="item">Speed: {{vehicle.LastSpeed}}</div>
+          <div class="item">RPM: {{vehicle.LastRpm}}</div>
+          <div class="item">Ignition on: {{vehicle.IgnitionOn}}</div>
+          <div class="item">VehicleTime: {{vehicle.VehicleTime}}</div>
+        </div>
+      </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+
+</ion-view>

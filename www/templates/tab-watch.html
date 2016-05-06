@@ -1,0 +1,69 @@
+<ion-view view-title="Watch">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-hide="watch">
+
+        <div class="item">
+          <span>RPM (0 - 10000)</span>
+
+          <div class="item range range-assertive ">
+            {{RPM}}
+            <input type="range" name="rpm" min="0" max="10000" ng-model="$parent.RPM">
+          </div>
+        </div>
+
+        <div class="item">
+
+          <span class="range">MPH (0 - 200)</span>
+
+          <div class="item range range-assertive ">
+            {{MPH}}
+            <input type="range" name="mph" min="0" max="200" ng-model="$parent.MPH">
+          </div>
+
+          <!--{{MPH}}-->
+        </div>
+      </ion-item>
+      <ion-item class="iten-button">
+
+
+        <!--{{RPM}}-->
+        <div class="button-bar">
+          <ion-spinner class="spinner svg" ng-show="watchSpinner"></ion-spinner>
+
+          <button class="button   button-positive" ng-disabled="watch" ng-click="onStartWatch()">Start</button>
+          <button class="button  button-positive" ng-disabled="!watch" ng-click="onStopWatch()">Stop</button>
+        </div>
+      </ion-item>
+
+      <ion-item ng-repeat="event in watchEvents track by $index" class="item" ng-click="onWatchItem(event)">
+        <div style="float: left;padding-right: 5px;" ng-hide="event.LastRpm < RPM">
+          <img src="img/rpm24.png" style="width: 24px;height: 24px;float: left;">
+          <div style="float: left;padding-left: 5px;">{{event.LastRpm}} rpm</div>
+        </div>
+        <div style="float: left;padding-right: 5px;" ng-hide="event.LastSpeed < MPH">
+          <img src="img/speed24.png" style="width: 24px; height: 24px; float: left ">
+          <div style="padding-left: 5px;float: left;">{{event.LastSpeed}} mph</div>
+        </div>
+        <div style="float: right;" >
+          <div style="font-size: 60%;font-style: italic;text-align: right;">{{event.LastContactTime | date:'medium'}}</div>
+        </div>
+
+      </ion-item>
+      <!--<ion-item ng-repeat="event in watchEvents track by $index" class="item-text-wrap" ng-click="onWatchItem(event)">-->
+      <!--<div style="float: none; ">-->
+      <!--<div style="float: left; padding-right: 5px" ng-hide="event.LastRpm < RPM">-->
+      <!--<img ng-src="img/rpm24.png" style="width: 24px; height: 24px; float: left;  ">-->
+      <!--<div style="float: left; padding-left: 5px">{{event.LastRpm}} rpm</div>-->
+      <!--</div>-->
+      <!--<div style="float: left; padding-right: 5px" ng-hide="event.LastSpeed < MPH">-->
+      <!--<img src="img/speed24.png" style="width: 24px; height: 24px; float: left ">-->
+      <!--<div style="float: left; padding-left: 5px">{{event.LastSpeed}} mph</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div style="font-size: 80%; text-align: center">{{event.LastContactTime | date:'medium'}}</div>-->
+
+      <!--</ion-item>-->
+    </ion-list>
+  </ion-content>
+</ion-view>

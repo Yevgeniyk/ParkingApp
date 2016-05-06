@@ -1,0 +1,26 @@
+<ion-view view-title="Observe" >
+  <ion-content >
+    <ion-list >
+      <ion-item class="iten-button">
+        <div class="button-bar">
+          <button class="button   button-positive" ng-disabled="observe" ng-click="onStartObserve()">Start</button>
+          <button class="button  button-positive" ng-disabled="!observe" ng-click="onStopObserve()">Stop</button>
+        </div>
+      </ion-item>
+
+        <ion-item  ng-repeat="event in observerEvents track by $index" class="item-text-wrap" >
+          <span ng-click="onObserveItem(event)">
+        Ignition: {{event.IgnitionOn}} Speed: {{event.LastSpeed}} Time: {{event.LastContactTime}}
+            </span>
+      </ion-item>
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in observerEvents" type="item-text-wrap"-->
+                <!--href="#/tab/chats/{{chat.id}}">-->
+        <!--<img ng-src="{{chat.face}}">-->
+        <!--<h2>{{chat.name}}</h2>-->
+        <!--<p>{{chat.lastText}}</p>-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+      <!--</ion-item>-->
+    </ion-list>
+  </ion-content>
+</ion-view>

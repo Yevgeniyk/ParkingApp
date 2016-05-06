@@ -1,0 +1,40 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="Login" icon-off="ion-lock-combination" icon-on="ion-lock-combination" href="#/tab/login">
+    <ion-nav-view name="tab-login"></ion-nav-view>
+    <button class=" button ">Refresh</button>
+
+  </ion-tab>
+
+  <ion-tab title="Cars" icon-off="ion-android-car" icon-on="ion-android-car" href="#/tab/cars" ng-click="onCarsClick()">
+    <ion-nav-view name="tab-cars"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Observe Tab -->
+  <ion-tab title="Observe" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/observe"  ng-click="onObserveClick()">
+  <div ng-disabled="true">
+    <ion-nav-view name="tab-observe" ></ion-nav-view>
+  </div>
+  </ion-tab>
+
+<ion-tab title="Watch" icon-off="ion-ios-eye" icon-on="ion-ios-eye" href="#/tab/watch" >
+<!--<ion-tab title="Watch" icon-off="ion-ios-eye" icon-on="ion-ios-eye" href="#/tab/watch" ng-click="onWatchClick()">-->
+    <ion-nav-view name="tab-watch"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab title="Details" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/details" ng-click="onDetailsClick()">
+    <ion-nav-view name="tab-details"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="test" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/chats" >
+    <ion-nav-view name="tab-detail"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>
