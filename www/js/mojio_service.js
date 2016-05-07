@@ -33,7 +33,7 @@ angular.module('mojioService', [])
             callback(false);
           } else {
             logged = true;
-            console.log("success:" + result);
+            // console.log("success:" + result);
             callback(true);
           }
 
@@ -59,19 +59,19 @@ angular.module('mojioService', [])
 //      var entity = mojio.schema();
 
       mojio.watch(observerInit, function (entity, callbach) {
-        console.log("Observed change seen.");
-        console.log(" entity ");
-        console.log(entity);
+        // console.log("Observed change seen.");
+        // console.log(" entity ");
+        // console.log(entity);
         //       return mojio.unobserve(observer, app, null, function (error, result) {
         //         return done();
         //     });
       }, function (error, result) {
-        console.log("on watch...");
+  //      console.log("on watch...");
         observer = result;
         subscribedObserver = observer;
         subscribedObserverSubject = observeObject;
-        console.log(" observer ");
-        console.log(observer);
+        // console.log(" observer ");
+        // console.log(observer);
       });
     };
 
@@ -145,16 +145,16 @@ angular.module('mojioService', [])
 
     function watchInternal(type, observer, callback, onWatchStart) {
       mojio.watch(observer, function (entity) {
-        console.log(entity);
+  //      console.log(entity);
         callback(entity);
       }, function (error, result) {
         if (onWatchStart) {
           onWatchStart(result);
         }
-        console.log("on watch...");
+        // console.log("on watch...");
         subscribedObserver[type] = result;
-        console.log(" observer ");
-        console.log(result);
+        // console.log(" observer ");
+        // console.log(result);
       });
 
     }
@@ -208,7 +208,7 @@ angular.module('mojioService', [])
         onSuccess(result);
         subscribedObserver = observer;
         subscribedObserverSubject = observeObject;
-        console.log(observer);
+     //   console.log(observer);
       });
 
 

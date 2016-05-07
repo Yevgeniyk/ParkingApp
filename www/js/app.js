@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.login', 'starter.services','mojioService', 'notificationsService', 'stateService'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.login', 'starter.map', 'starter.services','mojioService', 'notificationsService', 'stateService'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.login', 'sta
     views: {
       'tab-details': {
         templateUrl: 'templates/tab-details.html',
-        controller: 'CarsCtrl'
+        controller: 'MapCtrl'
       }
     }
   });

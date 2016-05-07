@@ -1,9 +1,18 @@
 <ion-view view-title="Details">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-text-wrap">
+  <ion-content scroll="false" class="has-header">
+    <div class=" card" style="height: 50%">
+      <div class="item item-divider">Location</div>
+      <div  id="map">
+
+      </div>
+    </div>
+    <div class=" card" >
+      <div class="item item-divider">Message</div>
+      <div class="item item-body"  style="height: 20vh">
         {{currentItem()}}
-      </ion-item>
-    </ion-list>
+
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

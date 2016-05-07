@@ -56,6 +56,7 @@ angular.module('starter.controllers', [])
         } else {
           $scope.vehicles = result;
           mojioService.setSelectedVehicle(result[0]);
+          stateService.setCurrentItem(result[0]);
           $scope.$apply();
 
           // console.log($scope.vehicles[0]);
