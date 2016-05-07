@@ -17,9 +17,16 @@ angular.module('starter.controllers', [])
     $scope.watchEvents = [];
     var lastContactTime = {};
     $scope.watchSpinner = false;
+    var rootScope = $rootScope;
 
     //  var state = $state;
 //    var stateParams = $stateParams;
+    $rootScope.$on('logout', function () {
+      $scope.observerEvents =[];
+      $scope.watchEvents =[];
+      stateService.setCurrentItem(undefined);
+
+    });
 
     $scope.$on('$stateChangeSuccess',
       function (event, toState, toParams, fromState, fromParams) {

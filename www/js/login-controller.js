@@ -1,6 +1,6 @@
 angular.module('starter.login', [])
 
-  .controller('LoginCtrl', function ($scope, $state, mojioService, notificationsService) {
+  .controller('LoginCtrl', function ($scope, $rootScope, $state, mojioService, notificationsService) {
 
     $scope.isLogged = false;
     $scope.logSpinner = false;
@@ -23,6 +23,7 @@ angular.module('starter.login', [])
         function () {
           // console.log("main logout");
           $scope.isLogged = false;
+          $rootScope.$broadcast('logout');
         }
       );
     };

@@ -9,7 +9,6 @@ angular.module('starter.map', [])
       zoom: 15,
       type: "terrain"
     };
-
     $scope.$on('$stateChangeSuccess',
       function (event, toState, toParams, fromState, fromParams) {
         // console.log(toState);
