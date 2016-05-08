@@ -65,8 +65,10 @@ angular.module('starter.controllers', [])
           mojioService.setSelectedVehicle(result[0]);
           stateService.setCurrentItem(result[0]);
           $scope.$apply();
+          $rootScope.$broadcast('vehicle');
 
-          // console.log($scope.vehicles[0]);
+
+           console.log("vehicle retrieved");
         }
       })
     };
